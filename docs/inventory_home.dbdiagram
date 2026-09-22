@@ -1,0 +1,58 @@
+{
+  "version": "3.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "relationshipMode": "All",
+    "tablePositions": [
+      {
+        "name": "producto",
+        "schemaName": "public",
+        "x": 470.3193359375,
+        "y": -421.5389231920698
+      },
+      {
+        "name": "categoria",
+        "schemaName": "public",
+        "x": 178.6748978610839,
+        "y": -513.0845069585389
+      },
+      {
+        "name": "ubicacion",
+        "schemaName": "public",
+        "x": 773.5180931104271,
+        "y": 53.180272101080845
+      },
+      {
+        "name": "unidad_medida",
+        "schemaName": "public",
+        "x": 139.3202007225316,
+        "y": -325.4870042151323
+      },
+      {
+        "name": "tipo_envasado",
+        "schemaName": "public",
+        "x": 158.05778395076283,
+        "y": -128.6878919216149
+      },
+      {
+        "name": "movimiento",
+        "schemaName": "public",
+        "x": 485.0502967542229,
+        "y": -153.833465589392
+      },
+      {
+        "name": "consumo",
+        "schemaName": "public",
+        "x": 834.3732475557119,
+        "y": -394.43076200873924
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": []
+  },
+  "views": {}
+}

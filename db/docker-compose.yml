@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: inventory-home
+    environment:
+      POSTGRES_USER: inventory_home
+      POSTGRES_PASSWORD: inventory_home
+      POSTGRES_DB: inventory_home
+    ports:
+      - "5433:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pg_data:

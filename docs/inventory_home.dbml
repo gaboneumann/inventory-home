@@ -1,0 +1,50 @@
+Table producto {
+  id integer [pk, increment]
+  nombre varchar
+  categoria_id integer
+  unidad_medida_id integer
+  tipo_envasado_id integer
+}
+
+Table movimiento {
+  id integer [pk, increment]
+  producto_id integer
+  ubicacion_id integer
+  cantidad_compra integer
+  fecha_compra date [not null]
+}
+
+Table consumo {
+  id integer [pk, increment]
+  producto_id integer
+  cantidad integer
+  fecha_consumo date [not null]
+}
+
+Table categoria {
+  id integer [pk, increment]
+  nombre varchar
+}
+
+Table ubicacion {
+  id integer [pk, increment]
+  nombre varchar
+}
+
+Table unidad_medida {
+  id integer [pk, increment]
+  nombre varchar
+  abreviatura varchar 
+}
+
+Table tipo_envasado {
+  id integer [pk, increment]
+  nombre varchar
+}
+
+Ref: producto.categoria_id > categoria.id
+Ref: producto.unidad_medida_id > unidad_medida.id
+Ref: producto.tipo_envasado_id > tipo_envasado.id
+Ref: movimiento.producto_id > producto.id
+Ref: movimiento.ubicacion_id > ubicacion.id
+Ref: consumo.producto_id > producto.id
