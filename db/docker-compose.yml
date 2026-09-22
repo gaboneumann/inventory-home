@@ -3,9 +3,9 @@ services:
     image: postgres:16
     container_name: inventory-home
     environment:
-      POSTGRES_USER: inventory_home
-      POSTGRES_PASSWORD: inventory_home
-      POSTGRES_DB: inventory_home
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     ports:
       - "5433:5432"
     volumes:
