@@ -1,11 +1,14 @@
-# Cache de gentle-ai.
+# gentle-ai cache
 .atl/
 
-# Python (futuro código en src/, scripts/, tests/)
+# Python (future code in src/, scripts/, tests/)
 __pycache__/
 *.pyc
 .venv/
 venv/
 
-# Variables de entorno / credenciales
+# Environment variables / credentials
 .env
+
+# Personal study notes (not part of public project docs)
+docs/studies/
