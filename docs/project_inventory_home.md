@@ -3,7 +3,7 @@ type: study-note
 fileClass: study-note
 area: learning
 status: open
-updated: 2026-08-27
+updated: 2026-09-22
 url:
 hub: "[[learning/Programming/Programming|Programming]]"
 ---
@@ -34,31 +34,41 @@ Es la entidad central que registra los alimentos.
 * `tipo_envasado_id` (FK, integer): Relación con la entidad tipo_envasado. Cardinalidad: N:1 (muchos productos pueden compartir un tipo_envasado).
 
 ### 2. Entidad: movimiento
+Registra cada compra o ingreso de un producto. Es insert-only: nunca se actualiza una fila
+existente.
 * `id` (PK, integer): Identificador único.
 * `producto_id` (FK, integer): Producto relacionado al movimiento.
 * `ubicacion_id` (FK, integer): Relación con la entidad ubicacion. Cardinalidad: N:1 (muchos productos pueden compartir una ubicacion).
-* `cantidad_compra` (integer): Fecha de la última compra o ingreso.
-* `fecha_compra` (date): Fecha de la última compra o ingreso.
-* `fecha_consumido` (date): Fecha del consumo del producto.
+* `cantidad_compra` (integer): Cantidad ingresada en esa compra.
+* `fecha_compra` (date): Fecha de la compra o ingreso.
 
+### 3. Entidad: consumo
+Registra cada consumo (total o parcial) de un producto. Es insert-only, igual que
+`movimiento`: consumir en partes es una fila nueva por cada parte, nunca una modificación
+de una fila anterior. Referencia `producto_id` directo — resta del stock global de ese
+producto, no de un movimiento ni una ubicación puntual.
+* `id` (PK, integer): Identificador único.
+* `producto_id` (FK, integer): Producto relacionado al consumo.
+* `cantidad` (integer): Cantidad consumida.
+* `fecha_consumo` (date): Fecha del consumo.
 
-### 3. Entidad: categoria
+### 4. Entidad: categoria
 Clasifica los alimentos para facilitar la organización.
 * `id` (PK, integer): Identificador único.
 * `nombre` (varchar): Nombre de la categoría (ej. Lácteos, Granos, Bebidas).
 
-### 4. Entidad: ubicacion
+### 5. Entidad: ubicacion
 Define los lugares físicos donde se almacenan los productos.
 * `id` (PK, integer): Identificador único.
 * `nombre` (varchar): Nombre del lugar (ej. Refrigerador, Despensa, Bodega).
 
-### 5. Entidad: unidad_medida
+### 6. Entidad: unidad_medida
 Estandariza las cantidades de los productos.
 * `id` (PK, integer): Identificador único.
 * `nombre` (varchar): Nombre de la unidad (ej. Kilos, Litros, Unidades).
 * `abreviatura` (varchar): Representación corta (ej. kg, L, un).
 
-### 6. Entidad: tipo_envasado
+### 7. Entidad: tipo_envasado
 Categoriza el tipo de envase para mejorar el orden y la gestión.
 * `id` (PK, integer): Identificador único.
 * `nombre` (varchar): Nombre del material o tipo de envase (ej. Lata, Vidrio, Plástico).
