@@ -10,14 +10,14 @@ Table movimiento {
   id integer [pk, increment]
   producto_id integer
   ubicacion_id integer
-  cantidad_compra integer
+  cantidad_compra decimal(10, 3)
   fecha_compra date [not null]
 }
 
 Table consumo {
   id integer [pk, increment]
   producto_id integer
-  cantidad integer
+  cantidad decimal(10, 3)
   fecha_consumo date [not null]
 }
 

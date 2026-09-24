@@ -39,7 +39,7 @@ existente.
 * `id` (PK, integer): Identificador único.
 * `producto_id` (FK, integer): Producto relacionado al movimiento.
 * `ubicacion_id` (FK, integer): Relación con la entidad ubicacion. Cardinalidad: N:1 (muchos productos pueden compartir una ubicacion).
-* `cantidad_compra` (integer): Cantidad ingresada en esa compra.
+* `cantidad_compra` (numeric): Cantidad ingresada en esa compra.
 * `fecha_compra` (date): Fecha de la compra o ingreso.
 
 ### 3. Entidad: consumo
@@ -49,7 +49,7 @@ de una fila anterior. Referencia `producto_id` directo — resta del stock globa
 producto, no de un movimiento ni una ubicación puntual.
 * `id` (PK, integer): Identificador único.
 * `producto_id` (FK, integer): Producto relacionado al consumo.
-* `cantidad` (integer): Cantidad consumida.
+* `cantidad` (numeric): Cantidad consumida.
 * `fecha_consumo` (date): Fecha del consumo.
 
 ### 4. Entidad: categoria

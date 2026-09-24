@@ -26,12 +26,12 @@ CREATE TABLE movimiento (
     id SERIAL PRIMARY KEY,
     producto_id INTEGER NOT NULL REFERENCES producto(id),
     ubicacion_id INTEGER NOT NULL REFERENCES ubicacion(id),
-    cantidad_compra INTEGER NOT NULL,
+    cantidad_compra NUMERIC(10, 3) NOT NULL,
     fecha_compra DATE NOT NULL
 );
 CREATE TABLE consumo (
     id SERIAL PRIMARY KEY,
     producto_id INTEGER NOT NULL REFERENCES producto(id),
-    cantidad INTEGER NOT NULL,
+    cantidad NUMERIC(10, 3) NOT NULL,
     fecha_consumo DATE NOT NULL
 );
